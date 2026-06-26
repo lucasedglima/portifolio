@@ -22,7 +22,11 @@ interface Photo {
 }
 
 // TODO: replace with your personal photos (public/fotos/pessoal/)
-
+const personalPhotos: Photo[] = [
+  { src: "", alt: "Foto pessoal 1", placeholder: true },
+  { src: "", alt: "Foto pessoal 2", placeholder: true },
+  { src: "", alt: "Foto pessoal 3", placeholder: true },
+];
 
 // TODO: replace with Asimov Jr. / company photos (public/fotos/asimov/)
 const companyPhotos: Photo[] = [
