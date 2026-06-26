@@ -22,17 +22,15 @@ interface Photo {
 }
 
 // TODO: replace with your personal photos (public/fotos/pessoal/)
-const personalPhotos: Photo[] = [
-  { src: "", alt: "Foto pessoal 1", placeholder: true },
-  { src: "", alt: "Foto pessoal 2", placeholder: true },
-  { src: "", alt: "Foto pessoal 3", placeholder: true },
-];
+
 
 // TODO: replace with Asimov Jr. / company photos (public/fotos/asimov/)
 const companyPhotos: Photo[] = [
-  { src: "/fotos/asimov/foto1.jpg", alt: "Asimov Jr. 1", placeholder: true },
-  { src: "/fotos/asimov/foto2.jpg", alt: "Asimov Jr. 2", placeholder: true },
-  { src: "/fotos/asimov/foto3.jpg", alt: "Asimov Jr. 3", placeholder: true },
+  { src: "/fotos/asimov/asimov1.jpeg", alt: "Asimov Jr. 1" },
+  { src: "/fotos/asimov/asimov2.jpeg", alt: "Asimov Jr. 2" },
+  { src: "/fotos/asimov/asimov3.jpeg", alt: "Asimov Jr. 3" },
+  { src: "/fotos/asimov/asimov4.jpeg", alt: "Asimov Jr. 4" },
+  { src: "/fotos/asimov/asimov5.jpeg", alt: "Asimov Jr. 5" },
 ];
 
 function PhotoCard({ photo, index }: { photo: Photo; index: number }) {
