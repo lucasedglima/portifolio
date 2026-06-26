@@ -49,15 +49,15 @@ export default function About() {
 
               <motion.p variants={fadeUp}>
                 Durante a graduação, fiz parte da Asimov Jr., empresa júnior de tecnologia
-                da UNIFEI, onde atuei como Diretor Vice-Presidente na área de Ciência de
+                da UNIFEI, onde atuei como Diretor Vice-Presidente e também na área de Ciência de
                 Dados. Foi uma experiência que me ensinou a equilibrar o lado técnico com
-                organização, responsabilidade e trabalho em equipe de verdade.
+                organização, liderança, responsabilidade e trabalho em equipe de verdade.
               </motion.p>
 
               <motion.p variants={fadeUp}>
                 Gosto de resolver problemas que misturam raciocínio lógico com criatividade.
-                Estou sempre aprendendo — não por obrigação, mas porque essa área muda rápido
-                e isso é exatamente o que a torna interessante.
+                Estou sempre buscando aprender mais, acredito que um bom profissional é 
+                aquele que nunca para de evoluir e tem um bom leque de hard e soft skills. 
               </motion.p>
             </motion.div>
 

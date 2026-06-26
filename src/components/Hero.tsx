@@ -66,7 +66,7 @@ export default function Hero() {
             variants={heroItem}
             className="text-xl md:text-2xl font-medium text-primary mb-4"
           >
-            Estudante de Engenharia de Computação
+            Estudante de Engenharia de Computação na Universidade Federal de Itajubá.
           </motion.h2>
 
           {/* TODO: edite esta descrição com sua apresentação pessoal */}
@@ -74,8 +74,9 @@ export default function Hero() {
             variants={heroItem}
             className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl leading-relaxed"
           >
-            Focado em Dados e IA, com passagem pela Asimov Jr. e interesse em
-            construir soluções inteligentes que fazem sentido no mundo real.
+            Desenvolvo aplicações web completas e projetos voltados para
+            Ciência de Dados e Inteligência Artificial, sempre buscando
+            unir boas práticas de engenharia com soluções que gerem impacto real.
           </motion.p>
 
           {/* CTAs */}
@@ -108,7 +109,7 @@ export default function Hero() {
               data-testid="button-hero-github"
             >
               {/* TODO: atualize com seu link real do GitHub */}
-              <a href="https://github.com/" target="_blank" rel="noopener noreferrer">
+              <a href="https://github.com/lucasedglima" target="_blank" rel="noopener noreferrer">
                 <Github className="w-4 h-4" /> GitHub
               </a>
             </Button>

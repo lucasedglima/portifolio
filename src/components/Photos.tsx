@@ -30,10 +30,9 @@ const personalPhotos: Photo[] = [
 
 // TODO: replace with Asimov Jr. / company photos (public/fotos/asimov/)
 const companyPhotos: Photo[] = [
-  { src: "", alt: "Asimov Jr. 1", placeholder: true },
-  { src: "", alt: "Asimov Jr. 2", placeholder: true },
-  { src: "", alt: "Asimov Jr. 3", placeholder: true },
-  { src: "", alt: "Asimov Jr. 4", placeholder: true },
+  { src: "/fotos/asimov/foto1.jpg", alt: "Asimov Jr. 1", placeholder: true },
+  { src: "/fotos/asimov/foto2.jpg", alt: "Asimov Jr. 2", placeholder: true },
+  { src: "/fotos/asimov/foto3.jpg", alt: "Asimov Jr. 3", placeholder: true },
 ];
 
 function PhotoCard({ photo, index }: { photo: Photo; index: number }) {
