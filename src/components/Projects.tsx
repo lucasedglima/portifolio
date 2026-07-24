@@ -1,117 +1,16 @@
 import { motion } from "framer-motion";
-import { Github, ExternalLink, FolderGit2 } from "lucide-react";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { fadeUp, scaleIn, stagger, viewport } from "@/lib/animations";
+import { ArrowUpRight, Github, Layers3 } from "lucide-react";
+import { fadeUp, stagger, viewport } from "@/lib/animations";
 
-// TODO: substitua pelos seus projetos reais do GitHub
 const projects = [
-  {
-    title: "Sistema de Gestão Escolar",
-    description:
-      "Plataforma completa para gerenciamento de alunos, professores e notas. Interface intuitiva e backend robusto.",
-    technologies: ["React", "Node.js", "TypeScript", "PostgreSQL"],
-    githubUrl: "https://github.com/",
-    demoUrl: "https://example.com",
-  },
-  {
-    title: "Analisador de Algoritmos",
-    description:
-      "Ferramenta visual para análise de complexidade de algoritmos clássicos de ordenação e busca.",
-    technologies: ["Python", "C++", "Matplotlib"],
-    githubUrl: "https://github.com/",
-    demoUrl: "#",
-  },
-  {
-    title: "E-commerce API",
-    description:
-      "API RESTful escalável para e-commerce com autenticação, carrinho de compras e processamento de pagamentos.",
-    technologies: ["Express", "MongoDB", "Redis", "Docker"],
-    githubUrl: "https://github.com/",
-    demoUrl: "https://example.com",
-  },
+  { number: "01", title: "Classificação com Regressão Logística", description: "Estudo em notebook sobre classificação, construído para explorar o fluxo de preparação, treinamento e avaliação de um modelo de regressão logística.", tags: ["Python", "Jupyter", "Machine Learning", "Classificação"], url: "https://github.com/lucasedglima/trabalho_ia" },
+  { number: "02", title: "Laboratório de Análise de Dados", description: "Coleção de estudos aplicados com K-means, matriz de confusão, redução de dimensionalidade e exploração do conjunto de dados Netflix Titles.", tags: ["K-means", "EDA", "Métricas", "Redução dimensional"], url: "https://github.com/lucasedglima/topicos" },
+  { number: "03", title: "Compilador", description: "Projeto em C que amplia o portfólio para além de dados e evidencia fundamentos de programação, linguagens e engenharia de software.", tags: ["C", "Compiladores", "Algoritmos", "Engenharia"], url: "https://github.com/lucasedglima/compilador" },
 ];
 
 export default function Projects() {
-  return (
-    <section id="projetos" className="py-16 scroll-mt-20">
-      <div className="container mx-auto px-6">
-        <motion.div
-          variants={stagger}
-          initial="hidden"
-          whileInView="visible"
-          viewport={viewport}
-        >
-          {/* Heading */}
-          <motion.h2
-            variants={fadeUp}
-            className="text-3xl md:text-4xl font-bold mb-12 flex items-center gap-3 text-foreground"
-          >
-            <FolderGit2 className="text-primary w-8 h-8" />
-            Projetos em Destaque
-          </motion.h2>
-
-          {/* Cards grid */}
-          <motion.div
-            variants={stagger}
-            className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
-          >
-            {projects.map((project, index) => (
-              <motion.div key={index} variants={scaleIn}>
-                <Card className="h-full flex flex-col bg-card border-border hover:border-primary/50 transition-colors duration-300">
-                  <CardHeader>
-                    <CardTitle className="text-xl">{project.title}</CardTitle>
-                    <CardDescription className="text-muted-foreground mt-2">
-                      {project.description}
-                    </CardDescription>
-                  </CardHeader>
-
-                  <CardContent className="flex-1">
-                    <div className="flex flex-wrap gap-2">
-                      {project.technologies.map((tech) => (
-                        <Badge
-                          key={tech}
-                          variant="secondary"
-                          className="bg-secondary text-secondary-foreground"
-                        >
-                          {tech}
-                        </Badge>
-                      ))}
-                    </div>
-                  </CardContent>
-
-                  <CardFooter className="gap-4">
-                    <Button
-                      asChild
-                      variant="outline"
-                      size="sm"
-                      className="flex-1"
-                      data-testid={`button-github-${index}`}
-                    >
-                      <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                        <Github className="w-4 h-4 mr-2" /> GitHub
-                      </a>
-                    </Button>
-                    {project.demoUrl !== "#" && (
-                      <Button
-                        asChild
-                        size="sm"
-                        className="flex-1"
-                        data-testid={`button-demo-${index}`}
-                      >
-                        <a href={project.demoUrl} target="_blank" rel="noopener noreferrer">
-                          <ExternalLink className="w-4 h-4 mr-2" /> Demo
-                        </a>
-                      </Button>
-                    )}
-                  </CardFooter>
-                </Card>
-              </motion.div>
-            ))}
-          </motion.div>
-        </motion.div>
-      </div>
-    </section>
-  );
+  return <section id="projetos" className="section"><motion.div className="site-container" variants={stagger} initial="hidden" whileInView="visible" viewport={viewport}>
+    <motion.div variants={fadeUp} className="flex flex-col justify-between gap-6 md:flex-row md:items-end"><div><p className="section-kicker">02 / Projetos</p><h2 className="section-title mt-5">Projetos práticos.</h2><p className="mt-5 max-w-2xl text-lg text-muted-foreground">Aplicações e estudos desenvolvidos para transformar conhecimento técnico em experiência.</p></div><a className="inline-link" href="https://github.com/lucasedglima?tab=repositories" target="_blank" rel="noreferrer">Todos os repositórios <ArrowUpRight className="size-4" /></a></motion.div>
+    <motion.div variants={stagger} className="mt-12 grid gap-5 lg:grid-cols-3">{projects.map((project) => <motion.article variants={fadeUp} key={project.title} className="project-card group"><div className="flex items-center justify-between"><span className="font-mono text-xs text-muted-foreground">PROJETO / {project.number}</span><Layers3 className="size-5 text-primary" /></div><h3>{project.title}</h3><p>{project.description}</p><div className="mt-auto flex flex-wrap gap-2 pt-7">{project.tags.map(tag => <span className="tag" key={tag}>{tag}</span>)}</div><a href={project.url} target="_blank" rel="noreferrer" className="project-link"><Github className="size-4" /> Ver código <ArrowUpRight className="ml-auto size-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" /></a></motion.article>)}</motion.div>
+  </motion.div></section>;
 }

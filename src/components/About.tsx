@@ -1,93 +1,31 @@
 import { motion } from "framer-motion";
-import { Terminal, Cpu, Database } from "lucide-react";
-import { fadeUp, fadeLeft, stagger, viewport } from "@/lib/animations";
+import { BarChart3, Compass, Target, Users } from "lucide-react";
+import { fadeUp, stagger, viewport } from "@/lib/animations";
+
+const leadership = [
+  { icon: Compass, title: "Direção e planejamento", text: "Planejamento e participação em reuniões gerais e de área, com acompanhamento da estratégia da empresa." },
+  { icon: Target, title: "OKRs e metas", text: "Estruturação de objetivos, metas de time e rotinas de acompanhamento para transformar intenção em execução." },
+  { icon: Users, title: "Liderança e qualidade", text: "Apoio aos times, alinhamento de prioridades e atenção à qualidade das entregas e da relação com clientes." },
+  { icon: BarChart3, title: "Cultura de dados", text: "Organização de informações para orientar decisões, medir avanços e dar clareza ao trabalho coletivo." },
+];
 
 export default function About() {
   return (
-    <section id="sobre" className="py-16 scroll-mt-20 bg-card/30 border-y border-border/50">
-      <div className="container mx-auto px-6">
-        <motion.div
-          variants={stagger}
-          initial="hidden"
-          whileInView="visible"
-          viewport={viewport}
-          className="max-w-4xl mx-auto"
-        >
-          {/* Heading */}
-          <motion.h2
-            variants={fadeUp}
-            className="text-3xl md:text-4xl font-bold mb-12 flex items-center gap-3 text-foreground"
-          >
-            <Terminal className="text-primary w-8 h-8" />
-            Sobre Mim
-          </motion.h2>
-
-          <div className="grid md:grid-cols-3 gap-10">
-            {/* Text content */}
-            <motion.div
-              variants={stagger}
-              className="md:col-span-2 space-y-6 text-lg text-muted-foreground leading-relaxed"
-            >
-              {/*
-               * TODO: reescreva estes parágrafos com suas próprias palavras se quiser
-               * personalizar ainda mais. O tom aqui é direto e humano, sem exageros.
-               */}
-              <motion.p variants={fadeUp}>
-                Cresci curioso sobre como as coisas funcionam por dentro — e a computação foi
-                a área que mais deu espaço pra isso. Hoje curso Engenharia de Computação na
-                UNIFEI e, ao longo do caminho, fui percebendo que o que mais me interessa
-                está na interseção entre dados, inteligência artificial e desenvolvimento.
-              </motion.p>
-
-              <motion.p variants={fadeUp}>
-                Minha maior afinidade está com Ciência de Dados e Inteligência Artificial —
-                extrair valor de dados, construir modelos e criar sistemas que aprendem é o
-                que mais me motiva. Também trabalho com desenvolvimento e enxergo as duas
-                áreas como naturalmente complementares: bons modelos precisam de bons
-                sistemas, e bons sistemas podem ser muito mais inteligentes com IA.
-              </motion.p>
-
-              <motion.p variants={fadeUp}>
-                Durante a graduação, fiz parte da Asimov Jr., empresa júnior de tecnologia
-                da UNIFEI, onde atuei como Diretor Vice-Presidente e também na área de Ciência de
-                Dados. Foi uma experiência que me ensinou a equilibrar o lado técnico com
-                organização, liderança, responsabilidade e trabalho em equipe de verdade.
-              </motion.p>
-
-              <motion.p variants={fadeUp}>
-                Gosto de resolver problemas que misturam raciocínio lógico com criatividade.
-                Estou sempre buscando aprender mais, acredito que um bom profissional é 
-                aquele que nunca para de evoluir e tem um bom leque de hard e soft skills. 
-              </motion.p>
-            </motion.div>
-
-            {/* Info cards */}
-            <motion.div variants={stagger} className="space-y-6">
-              <motion.div
-                variants={fadeLeft}
-                className="p-6 rounded-xl bg-card border border-border hover:border-primary/40 transition-colors"
-              >
-                <Cpu className="w-8 h-8 text-primary mb-4" />
-                <h3 className="font-semibold text-foreground mb-2">Engenharia de Computação</h3>
-                <p className="text-sm text-muted-foreground">
-                  UNIFEI — Universidade Federal de Itajubá
-                </p>
-              </motion.div>
-
-              <motion.div
-                variants={fadeLeft}
-                className="p-6 rounded-xl bg-card border border-border hover:border-primary/40 transition-colors"
-              >
-                <Database className="w-8 h-8 text-primary mb-4" />
-                <h3 className="font-semibold text-foreground mb-2">Asimov Jr.</h3>
-                <p className="text-sm text-muted-foreground">
-                  Diretor Vice-Presidente · Ciência de Dados
-                </p>
-              </motion.div>
-            </motion.div>
-          </div>
-        </motion.div>
-      </div>
+    <section id="sobre" className="section border-y border-border/70 bg-card/35">
+      <motion.div className="site-container" variants={stagger} initial="hidden" whileInView="visible" viewport={viewport}>
+        <motion.p variants={fadeUp} className="section-kicker">01 / Sobre</motion.p>
+        <div className="mt-5 grid gap-12 lg:grid-cols-[.82fr_1.18fr]">
+          <motion.div variants={fadeUp}>
+            <h2 className="section-title">Organização virou interesse por dados.</h2>
+            <p className="mt-6 text-lg leading-relaxed text-muted-foreground">Na Asimov Jr., atuei como Diretor de Vice-Presidência. Ao planejar e participar de reuniões gerais e de área, acompanhar OKRs, liderar pessoas e trabalhar metas de qualidade, percebi o valor de organizar informações para tomar decisões melhores.</p>
+            <p className="mt-4 leading-relaxed text-muted-foreground">Em paralelo, participei da área de Ciência de Dados: pesquisei demandas e cursos, contribuí com projetos e ajudei a planejar o desenvolvimento da área dentro da empresa júnior. Essa experiência conectou minha visão de gestão ao interesse técnico por dados, IA e engenharia.</p>
+            <div className="impact-note"><span>Resultado da gestão · 2025</span><strong>Cluster 5 e 100% das metas do ciclo alcançadas</strong><p>Também expandimos as áreas de projetos e ampliamos a realização de eventos internos e externos.</p></div>
+          </motion.div>
+          <motion.div variants={stagger} className="grid gap-4 sm:grid-cols-2">
+            {leadership.map(({ icon: Icon, title, text }) => <motion.article variants={fadeUp} key={title} className="feature-card"><Icon className="size-6 text-primary" /><h3>{title}</h3><p>{text}</p></motion.article>)}
+          </motion.div>
+        </div>
+      </motion.div>
     </section>
   );
 }

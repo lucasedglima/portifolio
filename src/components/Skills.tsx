@@ -1,115 +1,26 @@
 import { motion } from "framer-motion";
-import { Code2, Database, BrainCircuit, Wrench } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
-import { fadeUp, scaleIn, stagger, staggerFast, viewport } from "@/lib/animations";
+import { BrainCircuit, Cloud, Cog, Database, Languages, Network, Workflow } from "lucide-react";
+import { fadeUp, stagger, viewport } from "@/lib/animations";
 
-// TODO: adicione ou remova habilidades conforme necessário
-const skillGroups = [
-  {
-    label: "Data Science & IA",
-    icon: <BrainCircuit className="w-5 h-5 text-primary" />,
-    skills: ["Python", "Pandas", "NumPy", "Machine Learning", "Deep Learning", "Data Analysis"],
-  },
-  {
-    label: "Frontend",
-    icon: <Code2 className="w-5 h-5 text-primary" />,
-    skills: ["HTML", "CSS", "JavaScript", "TypeScript", "React"],
-  },
-  {
-    label: "Backend",
-    icon: <Wrench className="w-5 h-5 text-primary" />,
-    skills: ["Node.js", "APIs REST"],
-  },
-  {
-    label: "Outros",
-    icon: <Database className="w-5 h-5 text-primary" />,
-    skills: ["Git", "GitHub", "C/C++", "Banco de Dados", "Lógica de Programação", "Estruturas de Dados"],
-  },
+const groups = [
+  { icon: BrainCircuit, title: "Dados & IA", text: "Análise, visualização e construção de modelos.", skills: ["Python", "SQL", "Power BI", "Pandas", "NumPy", "Machine Learning"] },
+  { icon: Cloud, title: "Nuvem & Infraestrutura", text: "Base para sistemas confiáveis e escaláveis.", skills: ["Cloud Computing", "Docker", "APIs REST", "Banco de dados"] },
+  { icon: Cog, title: "Desenvolvimento", text: "Construção de aplicações e trabalho com código versionado.", skills: ["TypeScript", "React", "Git", "GitHub"] },
+  { icon: Database, title: "Fundamentos de Engenharia", text: "Conhecimentos desenvolvidos ao longo da graduação.", skills: ["C/C++", "Algoritmos", "Estruturas de dados", "Engenharia de Software"] },
 ];
 
-// TODO: adicione ou remova habilidades comportamentais conforme necessário
-const softSkills = [
-  "Organização",
-  "Trabalho em equipe",
-  "Resolução de problemas",
-  "Aprendizado contínuo",
-  "Liderança",
-  "Comunicação",
+const practices = [
+  { icon: Workflow, label: "Planejamento e OKRs" },
+  { icon: Database, label: "Decisões orientadas por dados" },
+  { icon: Network, label: "Liderança e colaboração" },
+  { icon: Languages, label: "Inglês avançado · curso em andamento" },
 ];
 
 export default function Skills() {
-  return (
-    <section id="habilidades" className="py-16 scroll-mt-20 bg-card/30 border-y border-border/50">
-      <div className="container mx-auto px-6">
-        <motion.div
-          variants={stagger}
-          initial="hidden"
-          whileInView="visible"
-          viewport={viewport}
-          className="max-w-4xl mx-auto"
-        >
-          {/* Heading */}
-          <motion.h2
-            variants={fadeUp}
-            className="text-3xl md:text-4xl font-bold mb-12 text-foreground"
-          >
-            Habilidades
-          </motion.h2>
-
-          {/* Technical skills grouped */}
-          <motion.div
-            variants={stagger}
-            className="grid sm:grid-cols-2 gap-6 mb-12"
-          >
-            {skillGroups.map((group) => (
-              <motion.div
-                key={group.label}
-                variants={scaleIn}
-                className="bg-card border border-border rounded-xl p-6 hover:border-primary/40 transition-colors"
-              >
-                <h3 className="flex items-center gap-2 font-semibold text-foreground mb-4">
-                  {group.icon}
-                  {group.label}
-                </h3>
-                <motion.div
-                  variants={staggerFast}
-                  className="flex flex-wrap gap-2"
-                >
-                  {group.skills.map((skill) => (
-                    <motion.div key={skill} variants={scaleIn}>
-                      <Badge
-                        variant="outline"
-                        className="px-3 py-1 text-sm border-primary/20 bg-background hover:bg-primary/10 transition-colors text-foreground cursor-default"
-                      >
-                        {skill}
-                      </Badge>
-                    </motion.div>
-                  ))}
-                </motion.div>
-              </motion.div>
-            ))}
-          </motion.div>
-
-          {/* Soft skills */}
-          <motion.div variants={fadeUp}>
-            <h3 className="text-xl font-bold mb-6 text-foreground">
-              Habilidades Comportamentais
-            </h3>
-            <motion.div variants={staggerFast} className="flex flex-wrap gap-3">
-              {softSkills.map((skill) => (
-                <motion.div
-                  key={skill}
-                  variants={fadeUp}
-                  className="flex items-center gap-2 px-4 py-2 rounded-lg bg-card border border-border hover:border-primary/40 transition-colors"
-                >
-                  <span className="w-1.5 h-1.5 rounded-full bg-primary" />
-                  <span className="text-sm font-medium text-foreground">{skill}</span>
-                </motion.div>
-              ))}
-            </motion.div>
-          </motion.div>
-        </motion.div>
-      </div>
-    </section>
-  );
+  return <section id="habilidades" className="section border-y border-border/70 bg-card/35"><motion.div className="site-container" variants={stagger} initial="hidden" whileInView="visible" viewport={viewport}>
+    <motion.p variants={fadeUp} className="section-kicker">03 / Competências</motion.p>
+    <motion.h2 variants={fadeUp} className="section-title mt-5 max-w-3xl">Amplitude técnica com método para executar.</motion.h2>
+    <motion.div variants={stagger} className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-4">{groups.map(({ icon: Icon, title, text, skills }) => <motion.article variants={fadeUp} className="skill-column" key={title}><Icon className="size-7 text-primary" /><h3>{title}</h3><p>{text}</p><ul>{skills.map(skill => <li key={skill}>{skill}</li>)}</ul></motion.article>)}</motion.div>
+    <motion.div variants={fadeUp} className="practice-bar">{practices.map(({ icon: Icon, label }) => <div key={label}><Icon className="size-5 text-primary" /><span>{label}</span></div>)}</motion.div>
+  </motion.div></section>;
 }

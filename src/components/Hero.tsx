@@ -1,119 +1,39 @@
-import { type Variants } from "framer-motion";
 import { motion } from "framer-motion";
-import { ArrowRight, FileText, Github } from "lucide-react";
+import { ArrowDownRight, Cloud, Cpu, Github, LineChart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-// Framer Motion 12 requires a bezier tuple for `ease`, not a string name.
-const EASE_OUT = [0.25, 0.46, 0.45, 0.94] as const;
-
-// Hero-specific variants — animate on page load, not on scroll
-const heroItem: Variants = {
-  hidden: { opacity: 0, y: 22 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: EASE_OUT } },
-};
-
-const heroContainer: Variants = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.12, delayChildren: 0.08 } },
-};
+const pillars = [
+  { icon: LineChart, label: "Dados & IA", value: "análise e modelos" },
+  { icon: Cloud, label: "Nuvem", value: "sistemas escaláveis" },
+  { icon: Cpu, label: "Engenharia", value: "software e hardware" },
+];
 
 export default function Hero() {
-  const handleProjectsClick = () => {
-    document.querySelector("#projetos")?.scrollIntoView({ behavior: "smooth" });
-  };
-
   return (
-    /*
-     * Layout: section starts immediately after fixed header (mt-16).
-     * min-h fills the rest of the viewport; flex centers content vertically.
-     * py-10 gives breathing room without creating empty-looking space.
-     */
-    <section
-      id="inicio"
-      className="mt-16 min-h-[calc(100vh-4rem)] flex items-center relative overflow-hidden py-10"
-    >
-      {/* Ambient background glows */}
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-[128px] pointer-events-none" />
-      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary/30 rounded-full blur-[128px] pointer-events-none" />
-
-      <div className="container mx-auto px-6 relative z-10">
-        <motion.div
-          variants={heroContainer}
-          initial="hidden"
-          animate="visible"
-          className="max-w-3xl"
-        >
-          {/* Available badge */}
-          <motion.div
-            variants={heroItem}
-            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary/50 border border-border text-xs font-medium text-primary mb-6"
-          >
-            <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-            Disponível para oportunidades
-          </motion.div>
-
-          {/* Name */}
-          <motion.h1
-            variants={heroItem}
-            className="text-5xl md:text-7xl font-bold tracking-tight text-foreground mb-6"
-          >
-            Lucas Eduardo <br className="hidden md:block" />
-            <span className="text-muted-foreground">Gomes de Lima</span>
-          </motion.h1>
-
-          {/* Subtitle */}
-          <motion.h2
-            variants={heroItem}
-            className="text-xl md:text-2xl font-medium text-primary mb-4"
-          >
-            Estudante de Engenharia de Computação na Universidade Federal de Itajubá.
-          </motion.h2>
-
-          {/* TODO: edite esta descrição com sua apresentação pessoal */}
-          <motion.p
-            variants={heroItem}
-            className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl leading-relaxed"
-          >
-            Desenvolvo aplicações web completas e projetos voltados para
-            Ciência de Dados e Inteligência Artificial, sempre buscando
-            unir boas práticas de engenharia com soluções que gerem impacto real.
-          </motion.p>
-
-          {/* CTAs */}
-          <motion.div variants={heroItem} className="flex flex-wrap gap-4">
-            <Button
-              onClick={handleProjectsClick}
-              size="lg"
-              className="gap-2"
-              data-testid="button-hero-projects"
-            >
-              Ver projetos <ArrowRight className="w-4 h-4" />
-            </Button>
-            <Button
-              asChild
-              variant="outline"
-              size="lg"
-              className="gap-2"
-              data-testid="button-hero-resume"
-            >
-              {/* TODO: coloque seu curriculo.pdf na pasta public/ */}
-              <a href="/curriculo.pdf" target="_blank" rel="noopener noreferrer">
-                <FileText className="w-4 h-4" /> Baixar currículo
-              </a>
-            </Button>
-            <Button
-              asChild
-              variant="secondary"
-              size="lg"
-              className="gap-2"
-              data-testid="button-hero-github"
-            >
-              {/* TODO: atualize com seu link real do GitHub */}
-              <a href="https://github.com/lucasedglima" target="_blank" rel="noopener noreferrer">
-                <Github className="w-4 h-4" /> GitHub
-              </a>
-            </Button>
-          </motion.div>
+    <section id="inicio" className="data-grid relative overflow-hidden pt-32 pb-20 md:pt-44 md:pb-28">
+      <div className="orb orb-one" /><div className="orb orb-two" />
+      <div className="site-container relative grid items-center gap-16 lg:grid-cols-[1.15fr_.85fr]">
+        <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .65 }}>
+          <p className="hero-name">Lucas Eduardo Gomes de Lima</p>
+          <h1 className="mt-7 max-w-4xl text-5xl font-semibold leading-[.98] tracking-[-.055em] sm:text-6xl lg:text-7xl">
+            Engenharia guiada por <span className="text-primary">dados.</span>
+          </h1>
+          <p className="mt-7 max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl">
+            Estudante de Engenharia de Computação na UNIFEI. Transformo problemas em soluções organizadas, conectando dados, inteligência artificial, nuvem e fundamentos de engenharia.
+          </p>
+          <div className="mt-9 flex flex-wrap gap-3">
+            <Button asChild size="lg" className="gap-2"><a href="#projetos">Explorar projetos <ArrowDownRight className="size-4" /></a></Button>
+            <Button asChild variant="outline" size="lg" className="gap-2"><a href="https://github.com/lucasedglima" target="_blank" rel="noreferrer"><Github className="size-4" /> GitHub</a></Button>
+          </div>
+        </motion.div>
+        <motion.div initial={{ opacity: 0, scale: .96 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: .15, duration: .7 }} className="signal-panel">
+          <div className="signal-orbit"><span /><span /><span /></div>
+          <p className="font-mono text-xs uppercase tracking-[.22em] text-primary">Áreas de atuação</p>
+          <div className="mt-8 space-y-3">
+            {pillars.map(({ icon: Icon, label, value }, index) => (
+              <div className="metric-row" key={label}><span className="metric-index">0{index + 1}</span><Icon className="size-5 text-primary" /><div><strong>{label}</strong><small>{value}</small></div></div>
+            ))}
+          </div>
         </motion.div>
       </div>
     </section>

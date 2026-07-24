@@ -1,5 +1,5 @@
 <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="64" height="64" rx="14" fill="#0F172A"/>
-  <path d="M20 14V44H39" stroke="#38BDF8" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M31 20V50H48" stroke="#F8FAFC" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect width="64" height="64" rx="15" fill="#07100F"/>
+  <path d="M15 15V46H31" stroke="#70F0BA" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M49 17H34V46H49M34 31H46" stroke="#E8F3F1" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
