@@ -1,12 +1,12 @@
 import { motion } from "framer-motion";
-import { BarChart3, Compass, Target, Users } from "lucide-react";
+import { BarChart3, BrainCircuit, Code2, Gauge } from "lucide-react";
 import { fadeUp, stagger, viewport } from "@/lib/animations";
 
-const leadership = [
-  { icon: Compass, title: "Direção e planejamento", text: "Planejamento e participação em reuniões gerais e de área, com acompanhamento da estratégia da empresa." },
-  { icon: Target, title: "OKRs e metas", text: "Estruturação de objetivos, metas de time e rotinas de acompanhamento para transformar intenção em execução." },
-  { icon: Users, title: "Liderança e qualidade", text: "Apoio aos times, alinhamento de prioridades e atenção à qualidade das entregas e da relação com clientes." },
-  { icon: BarChart3, title: "Cultura de dados", text: "Organização de informações para orientar decisões, medir avanços e dar clareza ao trabalho coletivo." },
+const areas = [
+  { icon: Gauge, title: "Gestão orientada a dados", text: "Indicadores e informações organizadas para apoiar decisões." },
+  { icon: BarChart3, title: "Análise de dados", text: "Python, SQL e Power BI aplicados a problemas práticos." },
+  { icon: BrainCircuit, title: "Data Science & ML", text: "Exploração de dados e construção de modelos." },
+  { icon: Code2, title: "Engenharia de Software", text: "Base de programação e desenvolvimento de aplicações." },
 ];
 
 export default function About() {
@@ -19,10 +19,10 @@ export default function About() {
             <h2 className="section-title">Organização virou interesse por dados.</h2>
             <p className="mt-6 text-lg leading-relaxed text-muted-foreground">Na Asimov Jr., atuei como Diretor de Vice-Presidência. Ao planejar e participar de reuniões gerais e de área, acompanhar OKRs, liderar pessoas e trabalhar metas de qualidade, percebi o valor de organizar informações para tomar decisões melhores.</p>
             <p className="mt-4 leading-relaxed text-muted-foreground">Em paralelo, participei da área de Ciência de Dados: pesquisei demandas e cursos, contribuí com projetos e ajudei a planejar o desenvolvimento da área dentro da empresa júnior. Essa experiência conectou minha visão de gestão ao interesse técnico por dados, IA e engenharia.</p>
-            <div className="impact-note"><span>Resultado da gestão · 2025</span><strong>Cluster 5 e 100% das metas do ciclo alcançadas</strong><p>Também expandimos as áreas de projetos e ampliamos a realização de eventos internos e externos.</p></div>
+            <div className="impact-note"><span>Resultado da gestão · 2025</span><strong>Cluster 5 alcançado em 2025</strong><p>Classificação máxima de maturidade para Empresas Juniores, atingida por uma parcela pequena das EJs no Brasil, com 100% das metas do ciclo cumpridas.</p></div>
           </motion.div>
           <motion.div variants={stagger} className="grid gap-4 sm:grid-cols-2">
-            {leadership.map(({ icon: Icon, title, text }) => <motion.article variants={fadeUp} key={title} className="feature-card"><Icon className="size-6 text-primary" /><h3>{title}</h3><p>{text}</p></motion.article>)}
+            {areas.map(({ icon: Icon, title, text }) => <motion.article variants={fadeUp} key={title} className="feature-card"><Icon className="size-6 text-primary" /><h3>{title}</h3><p>{text}</p></motion.article>)}
           </motion.div>
         </div>
       </motion.div>

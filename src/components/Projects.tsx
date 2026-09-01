@@ -3,9 +3,9 @@ import { ArrowUpRight, Github, Layers3 } from "lucide-react";
 import { fadeUp, stagger, viewport } from "@/lib/animations";
 
 const projects = [
-  { number: "01", title: "Classificação com Regressão Logística", description: "Estudo em notebook sobre classificação, construído para explorar o fluxo de preparação, treinamento e avaliação de um modelo de regressão logística.", tags: ["Python", "Jupyter", "Machine Learning", "Classificação"], url: "https://github.com/lucasedglima/trabalho_ia" },
-  { number: "02", title: "Laboratório de Análise de Dados", description: "Coleção de estudos aplicados com K-means, matriz de confusão, redução de dimensionalidade e exploração do conjunto de dados Netflix Titles.", tags: ["K-means", "EDA", "Métricas", "Redução dimensional"], url: "https://github.com/lucasedglima/topicos" },
-  { number: "03", title: "Compilador", description: "Projeto em C que amplia o portfólio para além de dados e evidencia fundamentos de programação, linguagens e engenharia de software.", tags: ["C", "Compiladores", "Algoritmos", "Engenharia"], url: "https://github.com/lucasedglima/compilador" },
+  { number: "01", title: "Da Roça", description: "Aplicação full stack para um marketplace local de produtos agrícolas, conectando interface, API e persistência de dados.", tags: ["React", "TypeScript", "Fastify", "PostgreSQL", "Prisma", "JWT", "Docker"], url: "https://github.com/lucasedglima/da-roca" },
+  { number: "02", title: "Netflix Machine Learning", description: "Coleção de estudos aplicados sobre o dataset Netflix Titles, reunindo análise de dados, agrupamento, classificação e redução de dimensionalidade.", tags: ["Python", "Scikit-learn", "Jupyter", "K-Means", "KNN", "PCA", "Matriz de confusão"], url: "https://github.com/lucasedglima/netflix-machine-learning" },
+  { number: "03", title: "Custom Language Compiler", description: "Projeto acadêmico de compiladores com implementação das etapas de análise léxica e sintática de uma linguagem personalizada.", tags: ["C", "Flex", "Bison", "Compiladores", "Análise léxica", "Análise sintática"], url: "https://github.com/lucasedglima/custom-language-compiler" },
 ];
 
 export default function Projects() {

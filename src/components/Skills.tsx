@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
-import { BrainCircuit, Cloud, Cog, Database, Languages, Network, Workflow } from "lucide-react";
+import { BarChart3, BrainCircuit, Cog, Database, Languages, Network, Workflow } from "lucide-react";
 import { fadeUp, stagger, viewport } from "@/lib/animations";
 
 const groups = [
   { icon: BrainCircuit, title: "Dados & IA", text: "Análise, visualização e construção de modelos.", skills: ["Python", "SQL", "Power BI", "Pandas", "NumPy", "Machine Learning"] },
-  { icon: Cloud, title: "Nuvem & Infraestrutura", text: "Base para sistemas confiáveis e escaláveis.", skills: ["Cloud Computing", "Docker", "APIs REST", "Banco de dados"] },
+  { icon: BarChart3, title: "Banco de Dados / Analytics", text: "Organização, tratamento e comunicação de dados.", skills: ["PostgreSQL", "Tratamento de dados", "Visualização de dados", "Modelagem de dados"] },
   { icon: Cog, title: "Desenvolvimento", text: "Construção de aplicações e trabalho com código versionado.", skills: ["TypeScript", "React", "Git", "GitHub"] },
   { icon: Database, title: "Fundamentos de Engenharia", text: "Conhecimentos desenvolvidos ao longo da graduação.", skills: ["C/C++", "Algoritmos", "Estruturas de dados", "Engenharia de Software"] },
 ];
@@ -13,7 +13,7 @@ const practices = [
   { icon: Workflow, label: "Planejamento e OKRs" },
   { icon: Database, label: "Decisões orientadas por dados" },
   { icon: Network, label: "Liderança e colaboração" },
-  { icon: Languages, label: "Inglês avançado · curso em andamento" },
+  { icon: Languages, label: "Inglês avançado" },
 ];
 
 export default function Skills() {

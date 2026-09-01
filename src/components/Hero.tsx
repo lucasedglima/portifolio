@@ -1,11 +1,11 @@
 import { motion } from "framer-motion";
-import { ArrowDownRight, Cloud, Cpu, Github, LineChart } from "lucide-react";
+import { ArrowDownRight, Code2, Cpu, Github, LineChart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const pillars = [
   { icon: LineChart, label: "Dados & IA", value: "análise e modelos" },
-  { icon: Cloud, label: "Nuvem", value: "sistemas escaláveis" },
-  { icon: Cpu, label: "Engenharia", value: "software e hardware" },
+  { icon: Code2, label: "Desenvolvimento", value: "software e aplicações" },
+  { icon: Cpu, label: "Engenharia", value: "fundamentos e resolução de problemas" },
 ];
 
 export default function Hero() {
@@ -19,7 +19,7 @@ export default function Hero() {
             Engenharia guiada por <span className="text-primary">dados.</span>
           </h1>
           <p className="mt-7 max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl">
-            Estudante de Engenharia de Computação na UNIFEI. Transformo problemas em soluções organizadas, conectando dados, inteligência artificial, nuvem e fundamentos de engenharia.
+            Estudante de Engenharia de Computação na UNIFEI, com foco em Dados e Inteligência Artificial. Desenvolvo projetos que conectam análise de dados, Machine Learning e desenvolvimento de software.
           </p>
           <div className="mt-9 flex flex-wrap gap-3">
             <Button asChild size="lg" className="gap-2"><a href="#projetos">Explorar projetos <ArrowDownRight className="size-4" /></a></Button>
