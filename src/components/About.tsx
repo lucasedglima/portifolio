@@ -22,7 +22,7 @@ export default function About() {
 
           <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
             Ingressei na Asimov Jr. em agosto de 2024 e atuei como vice-presidente
-            durante o ano de 2025. Nesse período, acompanhei OKRs, organizei reuniões, estudei métricas e planejamento estratégioc, liderei
+            durante o ano de 2025. Nesse período, acompanhei OKRs, organizei reuniões, estudei métricas e planejamento estratégico, liderei
             pessoas e participei do planejamento de metas e iniciativas da empresa.
           </p>
 

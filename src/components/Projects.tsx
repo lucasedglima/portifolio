@@ -22,7 +22,7 @@ const projects = [
     number: "02",
     title: "Da Roça",
     description:
-      "Aplicação full stack para um marketplace local de produtos agrícolas, conectando interface, API e persistência de dados.",
+      "Aplicação full stack pensado para um marketplace local fictício de produtos agrícolas, conectando interface, API e persistência de dados.",
     tags: [
       "React",
       "TypeScript",
