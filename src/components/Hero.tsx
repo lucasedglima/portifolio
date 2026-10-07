@@ -19,7 +19,7 @@ export default function Hero() {
             Engenharia guiada por <span className="text-primary">dados.</span>
           </h1>
           <p className="mt-7 max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl">
-            Estudante de Engenharia de Computação na UNIFEI, com foco em Dados e Inteligência Artificial. Desenvolvo projetos que conectam análise de dados, Machine Learning e desenvolvimento de software.
+             Estudante de Engenharia de Computação na UNIFEI, com interesse em Dados, Inteligência Artificial e Desenvolvimento de Software. Desenvolvo projeto que conectam análise, tecnologia e resolução de problemas.
           </p>
           <div className="mt-9 flex flex-wrap gap-3">
             <Button asChild size="lg" className="gap-2"><a href="#projetos">Explorar projetos <ArrowDownRight className="size-4" /></a></Button>
